@@ -38,3 +38,27 @@ A motivated Computer Science graduate interested in pursuing a career which focu
 |2020|Analysis and prediction of House Sales Prices using Historical Data|Python, NumPy, Pandas|
 |2019|Human Activity Recognition using Wearable Body Sensors (Undergraduate Thesis)|Python, MATLAB, Scikit-Learn, TensorFlow|
 |2018|Smart Cane to Aid the Visually impaired (Undergraduate Lab Project)|Java, Arduino|
+
+# Professional Certificates and Training
+
+## Professional Certificates
+
+**Responsive Web Design Certification,  
+freeCodeCamp**
+(Completed February 2021)
+* HTML, CSS, Flexbox, CSS Grid  
+
+**IBM Data Science Professional Certificate**
+(Complted May 2020)
+*Key Courses:*
+* Data Analysis with Python
+* Data Visualization with Python
+* Databases and SQL for Data Science
+* Machine Learning with Python
+
+## Professional Training
+
+BRAC University Professional Training on:
+* Firmware Development (2018)
+* Presentation Skill Development (2016)
+
