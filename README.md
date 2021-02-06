@@ -24,3 +24,13 @@ A motivated Computer Science graduate interested in pursuing a career which focu
 ## Software Skills
 
 * Microsoft Office Suite (Word, Excel, Powerpoint)
+
+# Education
+
+* B.Sc. in Computer Science and Engineering  
+  BRAC University, Dhaka, Bangladesh
+
+# Projects
+
+|----|Title---------------------------------|Tools-----------------|
+|2020|Market Analysis of Restaurants in different Neighborhoods of Toronto using crowdsourced data (IBM Data Science Capstone Project)| Python, Pandas, Scikit-Learn, Seaborn|
