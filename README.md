@@ -35,3 +35,6 @@ A motivated Computer Science graduate interested in pursuing a career which focu
 ||Title|Tools|
 |----|--------------------------------------|----------------------|
 |2020|Market Analysis of Restaurants in different Neighborhoods of Toronto using crowdsourced data (IBM Data Science Capstone Project)| Python, Pandas, Scikit-Learn, Seaborn|
+|2020|Analysis and prediction of House Sales Prices using Historical Data|Python, NumPy, Pandas|
+|2019|Human Activity Recognition using Wearable Body Sensors (Undergraduate Thesis)|Python, MATLAB, Scikit-Learn, TensorFlow|
+|2018|Smart Cane to Aid the Visually impaired (Undergraduate Lab Project)|Java, Arduino|
