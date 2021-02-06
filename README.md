@@ -44,12 +44,12 @@ A motivated Computer Science graduate interested in pursuing a career which focu
 ## Professional Certificates
 
 **Responsive Web Design Certification,  
-freeCodeCamp**
-(Completed February 2021)
+freeCodeCamp**  
+(Completed February 2021)  
 * HTML, CSS, Flexbox, CSS Grid  
 
-**IBM Data Science Professional Certificate**
-(Complted May 2020)
+**IBM Data Science Professional Certificate**  
+(Complted May 2020)  
 *Key Courses:*
 * Data Analysis with Python
 * Data Visualization with Python
