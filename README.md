@@ -32,5 +32,6 @@ A motivated Computer Science graduate interested in pursuing a career which focu
 
 # Projects
 
-|----|Title---------------------------------|Tools-----------------|
+||Title|Tools|
+|----|--------------------------------------|----------------------|
 |2020|Market Analysis of Restaurants in different Neighborhoods of Toronto using crowdsourced data (IBM Data Science Capstone Project)| Python, Pandas, Scikit-Learn, Seaborn|
