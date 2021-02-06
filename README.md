@@ -1,3 +1,26 @@
 # Sadia Tanjim Promi
 
 A motivated Computer Science graduate interested in pursuing a career which focuses on development of meaningful software and services. Having a desire to work purposefully through consistency, discipline and hard work for my organization and be able to contribute to key decisions through meaningful use of data driven analysis.
+
+# Skills
+
+## Programming
+
+* Python
+* Javascript
+* Java
+
+## Web Development
+
+* Responsive Web Design  
+(HTML, CSS, Javascript)
+
+## Data Science
+
+* Data Science Basics
+* Data Collection & Cleaning
+* Data Analysis, Visualization and Machine Learning with Python
+
+## Software Skills
+
+* Microsoft Office Suite (Word, Excel, Powerpoint)
