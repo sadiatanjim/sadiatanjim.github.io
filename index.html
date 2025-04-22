@@ -1,593 +1,244 @@
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadia Tanjim Promi | Data Analyst</title>
 
-<html>
-    <head>
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-            crossorigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-        <style>
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-            ul {
-                list-style:none;
-   
-                overflow: hidden;
-            }
+  <style>
+    /* ----------  CSS RESET  ---------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1c1d21; background-color: #fafafa; }
+    :root{ --clr-primary:#003153; --clr-accent:#0074d9; --clr-light:#ffffff; --clr-muted:#f0f4f8; }
 
-            a {
-                text-decoration: none;
-                color: white;
-            }
+    /* NAV */
+    header{ position:sticky; top:0; z-index:999; background:var(--clr-primary); color:var(--clr-light); box-shadow:0 2px 4px rgba(0,0,0,.08); }
+    .nav-container{ max-width:1140px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:.75rem 1rem; }
+    .nav-brand{ font-size:1.25rem; font-weight:600; }
+    nav ul{ list-style:none; display:flex; gap:1.5rem; }
+    nav a{ color:var(--clr-light); text-decoration:none; font-weight:500; }
+    .burger{ display:none; cursor:pointer; }
+    .burger div{ width:24px; height:3px; background:var(--clr-light); margin:4px 0; }
 
-            .nav {
-                display: flex;
-                justify-content: flex-end;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                background: #4ABDAC ;
-                box-shadow: 0 2px 0 rgba(0, 0, 30, 0.4);
-                z-index: 10;
-                padding: 0px;
-            }
-            .nav-list {
-                display: flex;
-                margin: 0 16px;
-                
-            }
+    /* HERO */
+    #hero{ min-height:40vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem 1rem; background:linear-gradient(to right,var(--clr-primary),#005d8b); color:var(--clr-light); }
+    #hero h1{ font-size:clamp(2.2rem,5vw,3rem); font-weight:700; margin-bottom:1rem; }
+    #hero p{ max-width:700px; font-size:1rem; }
 
-            .nav-list li a {
-                display: block;
-                font-size: 25px;
-                text-decoration: none;
-                text-align: center;
-                padding: 16px 5px;
-                margin: 0px 5px;
-            }
+    /* SECTIONS */
+    section{ padding:4rem 1rem; }
+    .section-inner{ max-width:960px; margin:auto; }
+    .section-title{ font-size:1.75rem; font-weight:600; color:var(--clr-primary); margin-bottom:2rem; }
 
-            .nav-list li a:hover {
-                background-color: #266150;
-            }
+    /* EXPERIENCE */
+    .exp-card{ margin-bottom:2rem; }
+    .exp-header{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+    .exp-role{ font-weight:600; }
+    .exp-company{ font-style:italic; color:#555; }
+    .exp-bullets{ margin-top:.75rem; padding-left:1.25rem; }
+    .exp-bullets li{ margin-bottom:.5rem; }
 
-            html {
-                box-sizing: border-box;
-                overflow-x: hidden;
-                font-family: 'Roboto Slab', serif;
-            }
+    /* PROJECTS */
+    .proj-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+    .proj-card{ background:var(--clr-light); border-radius:6px; box-shadow:0 4px 10px rgba(0,0,0,.05); padding:1.25rem; transition:transform .2s; }
+    .proj-card:hover{ transform:translateY(-4px); }
+    .proj-card h3{ margin-bottom:.5rem; font-size:1.1rem; color:var(--clr-accent); }
+    .proj-card p{ font-size:.9rem; margin-bottom:.75rem; }
+    .proj-card a{ text-decoration:none; font-weight:600; color:var(--clr-primary); }
 
-            #welcome-section {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100vw;
-                height: 100vh;
-                background-color: #000;
-                background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-                color: lightgray;
-            }
-            
-            #about-info {
-                max-width: 500px;
-                text-align: justify;
-                text-align-last: center;
-                font-size: 20px;
-                line-height: 30px;
-            }
+    /* SKILLS */
+    .skill-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .skill-block{ background:var(--clr-muted); border-radius:6px; padding:1rem 1.25rem; }
+    .skill-block h4{ margin-bottom:.75rem; font-size:1rem; color:var(--clr-primary); }
+    .skill-block ul{ list-style:square inside; }
+    .skill-block li{ margin-bottom:.25rem; font-size:.9rem; }
 
-            #name {
-                font-size: 35px;
-                font-weight: 700;
-                color: #4ABDAC ;
-            }
+    /* CERTIFICATIONS */
+    .cert-list li{ margin-bottom:.5rem; }
 
-            .projects-section {
-                text-align: center;
-                background:  #45567d;
-                width: 100vw;
-            }
+    /* CONTACT */
+    #contact{ background:var(--clr-primary); color:var(--clr-light); }
+    .contact-links{ margin-top:1rem; display:flex; justify-content:center; gap:2rem; }
+    .contact-links a{ color:var(--clr-light); text-decoration:none; font-size:1.1rem; }
+    #contact .section-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-            .projects-section-header {
-                max-width: 640px;
-                margin: 0 auto 6rem auto;
-                border-bottom: 0.2rem solid lightgray;
-                color: white;
+    /* FOOTER */
+    footer{ text-align:center; padding:1.5rem 1rem; font-size:.85rem; background:#00283f; color:#cbd6e2; }
 
+    /* RESPONSIVE */
+    @media(max-width:768px){ nav ul{ position:absolute; top:64px; right:0; background:var(--clr-primary); flex-direction:column; width:220px; padding:1rem; transform:translateX(100%); transition:transform .3s; } nav ul.open{ transform:translateX(0); } .burger{ display:block; } }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-brand">Sadia Tanjim Promi</div>
+      <nav>
+        <ul id="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger"><div></div><div></div><div></div></div>
+    </div>
+  </header>
 
-            }
+  <!-- HERO -->
+  <section id="hero">
+    <h1>Data Analyst · Problem Solver</h1>
+    <p>Data Analyst with 1.5 years of experience turning complex fintech and digital service data into business insights. Skilled in building ETL pipelines, cleaning multi-source datasets, and creating impactful visualizations with Power BI and SQL. Proven track record of solving critical problems in fast-paced, high-pressure environments while supporting cross-functional teams.</p>
+  </section>
 
-            body {
-                display: flex;
-                flex-direction: column;
-            }
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <h2 class="section-title">Work Experience</h2>
 
-            #pj-head {
-                margin-bottom: 2px;
-                font-size: 35px;
-            }
+      <div class="exp-card">
+        <div class="exp-header">
+          <div><span class="exp-role">Executive, Business Intelligence</span> — <span class="exp-company">Nagad Ltd. (Fintech)</span></div>
+          <div><em>Aug 2022 – Oct 2023 · Dhaka, BD</em></div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed and maintained scalable ETL pipelines integrating transactional and user data from multiple sources.</li>
+          <li>Created interactive dashboards and reports in Power BI to support product and marketing decisions.</li>
+          <li>Performed customer segmentation and campaign analysis in collaboration with cross‑functional teams.</li>
+          <li>Worked closely with engineering and operations to monitor data flows and resolve issues promptly.</li>
+        </ul>
+      </div>
 
-            .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                grid-gap: 4rem;
-                width: 100%;
-                max-width: 1280px;
-                margin: 0 auto;
-                margin-bottom: 6rem;
-            }
+      <div class="exp-card">
+        <div class="exp-header">
+          <div><span class="exp-role">Intern, Data Intelligence &amp; Business Strategy</span> — <span class="exp-company">ADA (Axiata Digital &amp; Analytics)</span></div>
+          <div><em>Feb 2022 – May 2022 · Dhaka, BD</em></div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Supported end‑to‑end ETL processes using SQL and PySpark for telco and advertising datasets.</li>
+          <li>Cleaned, transformed, and analysed large datasets to uncover performance trends and insights.</li>
+          <li>Developed visualisations and presentation materials for both technical and business stakeholders.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-            .project-image {
-                height: calc(100% - 6.8rem);
-                width: 100%;
-                object-fit: cover;
-                border: 2px solid rgba(0, 0, 30, 0.4);
-                border-radius: 5px;
-            }
+  <!-- PROJECTS -->
+  <section id="projects" style="background:var(--clr-muted);">
+    <div class="section-inner">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="proj-grid">
+        <article class="proj-card">
+          <h3>PRISM Operational Data Reliability</h3>
+          <p>Oversaw data reliability for a nationwide cash‑logistics platform, instituting validation checks and fallback strategies to minimise downtime.</p>
+        </article>
+        <article class="proj-card">
+          <h3>Government Disbursement Database</h3>
+          <p>Designed a centralised database for historical government payment records, enabling accurate reconciliation and strategic forecasting.</p>
+        </article>
+        <article class="proj-card">
+          <h3>Restaurant Market Analysis (Toronto)</h3>
+          <p>Clustered neighbourhoods using crowdsourced location data to recommend optimal restaurant sites.<br/><a href="https://github.com/sadiatanjim/Coursera_Capstone" target="_blank">View on GitHub</a></p>
+        </article>
+        <article class="proj-card">
+          <h3>House‑Price Prediction</h3>
+          <p>Built a regression model to predict housing prices using Pandas and Scikit‑Learn.<br/><a href="https://jovian.ai/sadiatanjim/house-sales-project" target="_blank">Notebook &raquo;</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            #skills {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                width: 100vw;
-                background-color: #d0bdf4;
-            }
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <div class="skill-grid">
+        <div class="skill-block">
+          <h4>Data Analysis</h4>
+          <ul>
+            <li>ETL &amp; workflow automation</li>
+            <li>Data cleaning &amp; validation</li>
+            <li>SQL (Oracle, MySQL)</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h4>Programming</h4>
+          <ul>
+            <li>PL/SQL, Python, R</li>
+            <li>PySpark, Pandas</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h4>Visualisation &amp; Reporting</h4>
+          <ul>
+            <li>Power BI, Tableau</li>
+            <li>Excel, RStudio</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h4>Tools &amp; Platforms</h4>
+          <ul>
+            <li>Oracle DB, AWS, Git/GitHub</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h4>Professional Strengths</h4>
+          <ul>
+            <li>Problem solving</li>
+            <li>Critical thinking</li>
+            <li>Cross‑functional collaboration</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h4>Languages</h4>
+          <ul>
+            <li>English — Proficient</li>
+            <li>Bengali — Native</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            #certificates {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 5px;
-                width: 100vw;
-                background-color: #4F517D;
-            }
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-title" style="color:#fff;">Contact</h2>
+      <p>Let's connect!</p>
+      <div class="contact-links">
+        <!-- <a href="mailto:sadiatanjim@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a> -->
+        <a href="https://www.linkedin.com/in/sadiatanjim/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/sadiatanjim" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </section>
 
-            .cert-block {
-                background-color: rgb(255, 255, 255, 0.75);
-                max-width: 600px;
-                min-width: 400px;
-                border-radius: 5px;
-                margin: 5px;
-                padding: 5px 20px 5px 50px;
-                text-decoration: none;
-                color: black;
-            }
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Sadia Tanjim Promi. All rights reserved.
+  </footer>
 
-            .cert-header {
-                color: white;
-            }
-
-            .cert-block li{
-                list-style-type: square;
-            }
-
-            .skills-container {
-                display: flex;
-                flex-direction: row;
-                padding: 5% 10%;
-            }
-
-            @media (max-width: 700px) {
-                .skills-container {
-                    display: flex;
-                    flex-direction: column;
-                    
-                }
-                .skill-block {
-                    min-width: 80%;
-                    margin: 10px 0px;
-                }
-                
-            }
-
-            
-            .skill-block{
-                background-color: rgb(255, 255, 255, 0.8);
-                width: 33.33%;
-                height: 250px;
-                margin: 0px 10px;
-                border-radius: 5px;
-                padding: 5px 20px;
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-            }
-
-            .skill-block:hover {
-                transform: translateY(-6px);
-                background-color: white;
-            }
-
-
-            .skill-block li{
-                list-style-type: square;
-            }
-
-            #projects-other {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                width: 100vw;
-                background-color: #8076a3;
-                align-items: center;
-                padding: 50px 0px;
-            }
-
-            #project-list {
-                max-width: 700px;
-            }
-
-            th, td {
-                border-bottom: 1px solid darkslategray;
-            }
-
-            #project-list a {
-                color: rgb(61, 7, 68);
-                font-weight: 600;
-            }   
-
-            .contact-section {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-                padding: 0 2rem;
-                background-color: #000;
-                background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-            }
-
-            .contact-section-header {
-                color: white;
-                font-size: 22px;
-                font-weight: 500;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 1rem 2rem;
-                border-radius: 2px;
-            }
-
-            .btn-show-all {
-                font-size: 2rem;
-                background: var(--main-gray);
-                transition: background 0.3s ease-out;
-            }
-
-            .btn-show-all:hover {
-                background: crimson;
-            }
-
-            
-
-
-            .btn-show-all:hover > i {
-                transform: translateX(2px);
-            }
-
-            .btn-show-all > i {
-                margin-left: 10px;
-                transform: translateX(0);
-                transition: transform 0.3s ease-out;
-            }
-
-            .contact-details {
-                font-size: 2rem;
-                text-shadow: 2px 2px 1px #1f1f1f;
-                transition: transform 0.3s ease-out;
-            }
-
-            .contact-details:hover {
-                transform: translateY(8px);
-            }
-
-            footer {
-                display: flex;
-                flex-direction: column;
-                font-weight: 300;
-                justify-content: space-evenly;
-                padding: 2rem;
-                background-color: #000;
-                background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-                border-top: 5px solid #4ABDAC;
-                height: 10%;
-                width: 100vw;
-                text-align: center;
-                color: white;
-            }
-
-            
-            
-        </style>
-
-    </head>
-    <body>
-        <nav id="navbar" class="nav">
-            <ul class="nav-list">
-                <li>
-                    <a href="#welcome-section">About</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </nav>
-
-        <section id="welcome-section">
-            <h1 id="name">Sadia Tanjim Promi</h1>
-            <p id="about-info">A motivated Computer Science graduate interested in pursuing a 
-                career which focuses on development of meaningful software and services. 
-                Having a desire to work purposefully through consistency, 
-                discipline and hard work for my organization and be able to 
-                contribute to key decisions through meaningful use of data driven analysis.</p>
-        </section>
-        <section id="projects" class="projects-section">
-            <div class="projects-section-header">
-                <p id="pj-head">These are some of my Projects</p>
-            </div>
-            <div class="projects-grid">
-
-                <a
-                    href="https://github.com/sadiatanjim/Coursera_Capstone/blob/master/Report/Report.pdf"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/market-analysis.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Restaurant Market Analysis
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-                <a
-                    href="https://codepen.io/sadiatanjim/full/bGBwYgO"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/personal-portfolio.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Personal Portfolio Page
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-                <a
-                    href="https://codepen.io/sadiatanjim/full/YzpWdjK"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/landing-page.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Product Landing Page
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-                <a
-                    href="https://codepen.io/sadiatanjim/full/wvoWwBp"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/tribute-page.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Tribute Page
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-                <a
-                    href="https://codepen.io/sadiatanjim/full/jOVrMRz"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/survey-form.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Survey Form
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-
-                <a
-                    href="https://codepen.io/sadiatanjim/full/QWGKLaB"
-                    target="_blank"
-                    class="project project-tile"
-                >
-                <img
-                    class="project-image"
-                    src="https://raw.githubusercontent.com/sadiatanjim/responsive-web-projects/main/personal-portfolio/technical-doc.jpg"
-                    alt="project"
-                />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Technical Documentation Page
-                    <span class="code">&#47;&gt;</span>
-                </p>
-                </a>
-
-            </div>
-        </section>
-        <section id="skills">
-            <div>
-                <h1>Skills</h1>
-            </div>
-            <div class="skills-container">
-                <div class="skill-block">
-                    <h2>Programming:</h2>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-
-                <div class="skill-block">
-                    <h2>Web Development:</h2>
-                    <ul>
-                        <li>Responsive Web Deign</li>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>    
-                    </ul>
-                </div>
-
-                <div class="skill-block">
-                    <h2>Data Science:</h2>
-                    <ul>
-                        <li>Data Science Basics</li>
-                        <li>Data Collection & Cleaning</li>
-                        <li>Data Analysis & Visualization</li>
-                        <li>Machine Learning with Python</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects-other">
-            <h1>Other Projects</h1>
-            <div id="project-list">
-                <table id="projects-table">
-                    <thead>
-                      <tr>
-                        <th> </th>
-                        <th>Title</th>
-                        <th>Tools</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>2020</strong></td>
-                        <td><a href="https://github.com/sadiatanjim/Coursera_Capstone" target="_blank">
-                            Market Analysis of Restaurants in different Neighborhoods of 
-                            Toronto using crowdsourced data (IBM Data Science Capstone Project)</a></td>
-                        <td>Python, Pandas, Scikit-Learn, Seaborn</td>
-                      </tr>
-                      <tr>
-                        <td><strong>2020</strong></td>
-                        <td><a href="https://jovian.ai/sadiatanjim/house-sales-project">
-                            Analysis and prediction of House Sales Prices using Historical Data</a></td>
-                        <td>Python, NumPy, Pandas</td>
-                      </tr>
-                      <tr>
-                        <td>2019</td>
-                        <td>Human Activity Recognition using Wearable Body Sensors (Undergraduate Thesis)</td>
-                        <td>Python, MATLAB, Scikit-Learn, TensorFlow</td>
-                      </tr>
-                      <tr>
-                        <td>2018</td>
-                        <td>Smart Cane to Aid the Visually impaired (Undergraduate Lab Project)</td>
-                        <td>Java, Arduino</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-        </section>
-
-        <section id="certificates">
-            <h1 class="cert-header">Professional Certificates & Training</h1>
-            <div class="cert-block">
-                <strong>Responsive Web Design Certification,<br>
-                freeCodeCamp</strong><br>
-                (Completed February 2021)
-                <ul>
-                    <li>HTML, CSS, CSS Flexbox, CSS Grid</li>
-                </ul>
-            </div>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/HGGJYHKNR6UY" target="_blank" class="cert-block">
-                <strong>IBM Data Science Professional Certificate</strong><br>
-                (Completed May 2020)
-                <ul>
-                    <li>Data Analysis with Python</li>
-                    <li>Data Visualization with Python</li>
-                    <li>Databases and SQL for Data Science</li>
-                    <li>Machine Learning with Python</li>
-                </ul>
-            </a>
-            <div class="cert-block">
-                <strong>BRAC University Professional Training on:</strong>
-                <ul>
-                    <li>Firmware Development (2018)</li>
-                    <li>Presentation Skill Development (2016)</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="contact-section-header">
-              <h2 style="font: #F7E8E6">Contacts</h2>
-            </div>
-            <div class="contact-links">
-              
-              <a
-                id="profile-link"
-                href="https://github.com/sadiatanjim"
-                target="_blank"
-                class="btn contact-details"
-                ><i class="fab fa-github"></i> GitHub</a
-              >
-              
-              <a href="mailto:sadiatanjimpromi@gmail.com" class="btn contact-details"
-                ><i class="fas fa-at"></i> Send a mail</a
-              >
-              
-            </div>
-          </section>
-
-        <footer>
-            <p>This is a work in progress. Thanks for dropping by!</p><br>
-
-        </footer>
-
-    </body>
+  <script>
+    // Responsive nav burger
+    const burger = document.getElementById('burger');
+    const navList = document.getElementById('nav-list');
+    burger.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
 </html>
-
-<!--
-
-* Media Query
-* Todo: 
-    * Parallax - Add
-    * DS Project - Add
-    * Link to github in table
-    * Link to project report in portfolio
-
--->
